@@ -1,0 +1,11 @@
+[Defines]
+  DEC_SPECIFICATION		= 0x00010005
+  PACKAGE_NAME			= davinci
+  PACKAGE_GUID			= 31d3d707-09f2-4735-adda-b2d4dc648911
+  PACKAGE_VERSION		= 0.1
+
+[Includes.common]
+  Include				# Root include for the package
+
+[Guids.common]
+  gdavinciTokenSpaceGuid	= { 0x31d3d707, 0x09f2, 0x4735, { 0xad, 0xda 0xb2, 0xd4, 0xdc, 0x64, 0x89, 0x11 } }
