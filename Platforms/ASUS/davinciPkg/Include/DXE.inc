@@ -5,7 +5,6 @@ INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
 #INF Binaries/davinci/QcomPkg/Drivers/SecRSADxe/SecRSADxe.inf
 #INF Binaries/davinci/QcomPkg/Drivers/ASN1X509Dxe/ASN1X509Dxe.inf
 #INF Binaries/davinci/QcomPkg/Drivers/VerifiedBootDxe/VerifiedBootDxe.inf
-#INF Binaries/davinci/MiPkg/Protocol/MiToken/MiToken.inf
 
 INF Binaries/davinci/QcomPkg/Drivers/TzDxe/ScmDxeLA.inf
 INF Binaries/davinci/QcomPkg/Drivers/TzDxe/TzDxeLA.inf
@@ -48,8 +47,6 @@ INF Binaries/davinci/QcomPkg/Drivers/RpmhDxe/RpmhDxe.inf
 !if $(USE_DISPLAYDXE) == 1
 	INF Binaries/davinci/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
 !endif
-
-INF Binaries/davinci/QcomPkg/Drivers/PdcDxe/PdcDxe.inf
 INF Binaries/davinci/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
 INF Binaries/davinci/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
 
@@ -76,8 +73,6 @@ INF Binaries/davinci/QcomPkg/Drivers/TLMMDxe/TLMMDxe.inf
 # Only used for DisplayDxe for Qualcomm Demura
 #INF Binaries/davinci/QcomPkg/Drivers/FeatureEnablerDxe/FeatureEnablerDxe.inf
 
-INF Binaries/davinci/QcomPkg/Drivers/VibratorDxe/VibratorDxe.inf
-
 !if $(USE_DISPLAYDXE) == 1
 	INF Binaries/davinci/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
 !else
@@ -92,37 +87,13 @@ INF Binaries/davinci/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
 INF Binaries/davinci/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
 INF Binaries/davinci/QcomPkg/Drivers/PmicDxe/PmicDxeLa.inf
 INF Binaries/davinci/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/AdcDxe/AdcDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/LimitsDxe/LimitsDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/XhciDxe/XhciDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbBusDxe/UsbBusDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbKbDxe/UsbKbDxe.inf
 
 INF MdeModulePkg/Bus/Usb/UsbMouseAbsolutePointerDxe/UsbMouseAbsolutePointerDxe.inf
-
-INF Binaries/davinci/QcomPkg/Drivers/UsbMassStorageDxe/UsbMassStorageDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/UsbInitDxe/UsbInitDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/HashDxe/HashDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/CipherDxe/CipherDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/MacDxe/MacDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/RNGDxe/RngDxe.inf
 
 INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
 INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
 INF MdeModulePkg/Universal/Acpi/FirmwarePerformanceDataTableDxe/FirmwarePerformanceDxe.inf
 INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
 
-INF Binaries/davinci/QcomPkg/Drivers/PILDxe/PILDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/PILProxyDxe/PILProxyDxe.inf
-INF Binaries/davinci/QcomPkg/Drivers/SPSSDxe/SPSSDxe.inf
 INF Binaries/davinci/QcomPkg/Application/QcomChargerApp/QcomChargerApp.inf
 INF Binaries/davinci/QcomPkg/Drivers/ShmBridgeDxe/ShmBridgeDxeLA.inf

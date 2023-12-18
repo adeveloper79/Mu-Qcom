@@ -20,7 +20,7 @@
 #
 ################################################################################
 
-[FD.Poco_F3_UEFI]
+[FD.davinci_UEFI]
 BaseAddress   = $(FD_BASE)|gArmTokenSpaceGuid.PcdFdBaseAddress # The base address of the FLASH Device.
 Size          = $(FD_SIZE)|gArmTokenSpaceGuid.PcdFdSize        # The size in bytes of the FLASH Device
 ErasePolarity = 1
@@ -86,7 +86,7 @@ READ_LOCK_STATUS   = TRUE
   !include Include/RAW.inc
 
   # Secure Boot Key Enroll
-  INF SecurityPkg/VariableAuthenticated/SecureBootConfigDxe/SecureBootConfigDxe.inf
+  # INF SecurityPkg/VariableAuthenticated/SecureBootConfigDxe/SecureBootConfigDxe.inf
   INF QcomPkg/Drivers/SecureBootProvisioningDxe/SecureBootProvisioningDxe.inf
   INF QcomPkg/Drivers/SystemIntegrityPolicyProvisioningDxe/SystemIntegrityPolicyProvisioningDxe.inf
 
@@ -104,7 +104,7 @@ READ_LOCK_STATUS   = TRUE
   # ACPI and SMBIOS
   INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
-  INF sdm845Pkg/Drivers/SmBiosTableDxe/SmBiosTableDxe.inf
+  INF SM8450Pkg/Drivers/SmBiosTableDxe/SmBiosTableDxe.inf
 
   # ACPI Tables
   # !include Include/ACPI.inc

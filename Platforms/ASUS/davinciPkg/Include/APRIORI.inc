@@ -1,9 +1,8 @@
 APRIORI DXE {
+
 	# First, install the PCD driver and call DxeInit
 	INF MdeModulePkg/Core/Dxe/DxeMain.inf
 	INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
- 
-	INF Binaries/davinci/QcomPkg/Drivers/EnvDxe/EnvDxe.inf
 
 	INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
 	INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
@@ -18,6 +17,7 @@ APRIORI DXE {
 	INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
 	INF ArmPkg/Drivers/ArmPsciMpServicesDxe/ArmPsciMpServicesDxe.inf
 
+	INF Binaries/davinci/QcomPkg/Drivers/EnvDxe/EnvDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/SmemDxe/SmemDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/DALSYSDxe/DALSYSDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
@@ -29,7 +29,6 @@ APRIORI DXE {
 	INF Binaries/davinci/QcomPkg/Drivers/PwrUtilsDxe/PwrUtilsDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/NpaDxe/NpaDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/RpmhDxe/RpmhDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/PdcDxe/PdcDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/VcsDxe/VcsDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/ClockDxe/ClockDxe.inf
 
@@ -43,9 +42,7 @@ APRIORI DXE {
 	INF Binaries/davinci/QcomPkg/Drivers/PmicDxe/PmicDxeLa.inf
 
 	INF Binaries/davinci/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
-
 	INF Binaries/davinci/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
-
 	INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
 	INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
 
@@ -59,11 +56,7 @@ APRIORI DXE {
 
 	INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 	
-# 	Only used for DisplayDxe for Qualcomm Demura
-#	INF Binaries/davinci/QcomPkg/Drivers/FeatureEnablerDxe/FeatureEnablerDxe.inf
-
 	INF Binaries/davinci/QcomPkg/Drivers/QcomWDogDxe/QcomWDogDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/SPIDxe/SPIDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
 
@@ -72,10 +65,6 @@ APRIORI DXE {
 	!else
 		INF QcomPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 	!endif
-
-	INF Binaries/davinci/QcomPkg/Drivers/PILProxyDxe/PILProxyDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/PILDxe/PILDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/SPSSDxe/SPSSDxe.inf
 
 	!if $(USE_DISPLAYDXE) == 1
 		INF Binaries/davinci/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
@@ -95,29 +84,9 @@ APRIORI DXE {
 
 	INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
 
-	INF Binaries/davinci/QcomPkg/Drivers/VibratorDxe/VibratorDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/AdcDxe/AdcDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
 	INF Binaries/davinci/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/XhciDxe/XhciDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbBusDxe/UsbBusDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbKbDxe/UsbKbDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbMassStorageDxe/UsbMassStorageDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/UsbInitDxe/UsbInitDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/LimitsDxe/LimitsDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/HashDxe/HashDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/CipherDxe/CipherDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/MacDxe/MacDxe.inf
-	INF Binaries/davinci/QcomPkg/Drivers/RNGDxe/RngDxe.inf
 	INF Binaries/davinci/QcomPkg/Drivers/SimpleTextInOutSerialDxe/SimpleTextInOutSerial.inf
 
 	INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf

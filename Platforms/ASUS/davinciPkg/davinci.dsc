@@ -34,18 +34,20 @@
 
   # If your SoC has multimple variants define the Number here
   # If not don't add this Define
-  # SOC_TYPE                       = 2
+  SOC_TYPE                       = 1
 
 # If your SoC has multimple variants keep this Build Option
 # If not don't add "-DSOC_TYPE=$(SOC_TYPE)" to the Build Options.
 [BuildOptions.common]
-  *_*_*_CC_FLAGS = -DSOC_TYPE=$(SOC_TYPE) -DAB_SLOT_SUPPORT=$(AB_SLOT_SUPPORT) -DDISPLAY_USES_RGBA=$(DISPLAY_USES_RGBA)
+  *_*_*_CC_FLAGS = -DSOC_TYPE=$(SOC_TYPE) -DAB_SLOT_SUPPORT=$(AB_SLOT_SUPPORT) -DDISPLAY_USES_RGBA=$(DISPLAY_USES_RGBA) -DDEVICE_RAM=$(RAM_SIZE)
 
 [LibraryClasses.common]
   PlatformMemoryMapLib|davinciPkg/Library/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
+  DeviceConfigurationMapLib|davinciPkg/Library/DeviceConfigurationMapLib/DeviceConfigurationMapLib.inf
 
 [PcdsFixedAtBuild.common]
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000    # Starting address
+!if $(RAM_SIZE) == 16
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x400000000        # 16GB Size
 !elseif $(RAM_SIZE) == 8
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x200000000        # 8GB Size
@@ -69,7 +71,7 @@
 
   # Simple FrameBuffer
   gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2246
+  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2400
   gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32
 
 [PcdsDynamicDefault.common]
@@ -82,4 +84,4 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|135
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|126
 
-!include sdm8450Pkg/sdm8450.dsc.inc
+!include SM8450Pkg/SM8450Pkg.dsc.inc
